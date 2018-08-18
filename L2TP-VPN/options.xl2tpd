@@ -1,0 +1,13 @@
+require-mschap-v2
+ms-dns 192.168.1.1
+ms-dns 192.168.1.2
+auth
+mtu 1200
+mru 1000
+crtscts
+hide-password
+modem
+name l2tpd
+proxyarp
+lcp-echo-interval 30
+lcp-echo-failure 4

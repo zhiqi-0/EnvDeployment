@@ -1,0 +1,6 @@
+echo 'Starting LTP2 over IPSec VPN Service...'
+ipsec restart
+service xl2tpd restart
+echo 'check /etc/ppp/chap-secrets for username and key'
+echo 'check /etc/ipsec.secrets for shared key'
+echo 'check /var/log/syslog or /var/log/auth.log for loggings'
