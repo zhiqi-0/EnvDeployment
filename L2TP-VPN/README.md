@@ -6,7 +6,7 @@
 
 * Make sure you are in root bash (sudo -s)
 
-### Step 2: Setup Basic Configure
+### Step 2: Setup basic configure
 
 * edit the file `ipsec.conf` at line 22 (left=x.x.x.x): change x.x.x.x to your server public network ip 
 
@@ -16,13 +16,13 @@
 
 ### Step 4: Setup your shared password
 
-* edit /etc/ipsec.secrets to add your password
+* edit `/etc/ipsec.secrets` to add your password
 
 * text format: `%any : PSK <Your Password>`, where `<Your Password>` should be replaced by your new password
 
 ### Step 5: Setup user information
 
-* edit /etc/ppp/chap-secrets to add user account and password
+* edit `/etc/ppp/chap-secrets` to add user account and password
 
 * text format: `<User Name> l2tpd <User Password> *`, where `*` denotes this user can use all ip address
 
