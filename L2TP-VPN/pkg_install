@@ -1,6 +1,6 @@
 echo 'L2TP/IPsec VPN install for Ubuntu 16.04'
 echo 'Make sure you are in root bash'
-echo 'Start install packages and change configs...'
+echo 'Start installing packages and changing configs...'
 
 apt-get install strongswan xl2tpd ppp lsof
 

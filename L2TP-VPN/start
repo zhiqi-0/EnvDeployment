@@ -1,4 +1,4 @@
-echo 'Starting LTP2 over IPSec VPN Service...'
+echo 'starting LTP2 over IPSec VPN Service...'
 ipsec restart
 service xl2tpd restart
 echo 'check /etc/ppp/chap-secrets for username and key'
