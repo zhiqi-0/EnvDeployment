@@ -10,7 +10,7 @@
 
 * edit the file `ipsec.conf` at line 22 (left=x.x.x.x): change x.x.x.x to your server public network ip 
 
-* [Optional] edit the file `options.xl2tpd`, change ms-dns ip to match client laptop DNS (default is fine)
+* [Optional] edit the file `options.xl2tpd`, change `ms-dns ip` to match client laptop DNS (default is fine)
 
 * run the command `source pkg_install`
 
