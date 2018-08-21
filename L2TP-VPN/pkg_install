@@ -20,13 +20,13 @@ echo 'add auto restart system forwarding configs'
 echo 'for vpn in /proc/sys/net/ipv4/conf/*; do echo 0 > $vpn/accept_redirects; echo 0 > $vpn/send_redirects; done' >> /etc/rc.local
 
 echo 'config /etc/ipsec.conf...'
-cat ipsec.conf >> /etc/ipsec.conf
+cat ipsec.conf > /etc/ipsec.conf
 
 echo 'config /etc/xl2tpd/xl2tpd.con...'
-cat xl2tpd.conf >> /etc/xl2tpd/xl2tpd.conf
+cat xl2tpd.conf > /etc/xl2tpd/xl2tpd.conf
 
 echo 'config /etc/ppp/options.xl2tpd...'
-cat options.xl2tpd >> /etc/ppp/options.xl2tpd
+cat options.xl2tpd > /etc/ppp/options.xl2tpd
 
 echo 'config iptables...'
 iptables -A INPUT -p gre -j ACCEPT
