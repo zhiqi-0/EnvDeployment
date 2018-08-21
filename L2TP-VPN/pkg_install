@@ -20,10 +20,19 @@ echo 'add auto restart system forwarding configs'
 echo 'for vpn in /proc/sys/net/ipv4/conf/*; do echo 0 > $vpn/accept_redirects; echo 0 > $vpn/send_redirects; done' >> /etc/rc.local
 
 echo 'config /etc/ipsec.conf...'
-cp ipsec.conf /etc/ipsec.conf
+cat ipsec.conf >> /etc/ipsec.conf
 
 echo 'config /etc/xl2tpd/xl2tpd.con...'
-cp xl2tpd.conf /etc/xl2tpd/xl2tpd.conf
+cat xl2tpd.conf >> /etc/xl2tpd/xl2tpd.conf
 
-echo 'config /etc/ppp/options.xl2tpd'
-cp options.xl2tpd /etc/ppp/options.xl2tpd
+echo 'config /etc/ppp/options.xl2tpd...'
+cat options.xl2tpd >> /etc/ppp/options.xl2tpd
+
+echo 'config iptables...'
+iptables -A INPUT -p gre -j ACCEPT
+iptables -A INPUT -p tcp --dport 1723 -j ACCEPT
+iptables -A INPUT -p tcp --dport 47 -j ACCEPT
+iptables -A INPUT -p udp --dport 500 -j ACCEPT
+iptables -A INPUT -i udp --dport 4500 -j ACCEPT
+iptables -A INPUT -i udp --dport 1701 -j ACCEPT
+iptables -t nat -A POSTROUTING -s 192.168.100.0/24 -o eth0 -j MASQUERADE
