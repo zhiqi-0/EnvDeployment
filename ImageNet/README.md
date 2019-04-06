@@ -28,7 +28,7 @@ Extract training dataset
 * Run following commands to extract .tar in folder
   ```
   cd /path/to/imagenet/train/folder
-  wget 
+  wget https://raw.githubusercontent.com/ralzq01/EnvDeployment/master/ImageNet/extract.sh
   chmod u+x extract.sh
   ./extract.sh
   ```
