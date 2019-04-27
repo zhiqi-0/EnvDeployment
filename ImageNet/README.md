@@ -44,7 +44,7 @@ Extract validation dataset
 
 * Extract the test tar to the val foler with the following commands:
   ```sh
-  tar -xf ILSVRC2012_img.val.tar -C /path/to/imagenet/val/
+  tar -xf ILSVRC2012_img_val.tar -C /path/to/imagenet/val/
   ```
   This will generate lots of .JPEG files
 
