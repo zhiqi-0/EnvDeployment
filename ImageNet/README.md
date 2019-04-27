@@ -12,7 +12,7 @@ Download training dataset and validation dataset
   * Download Validation Dataset on Task 1&2
   * No need to download Test Dataset or Development Kit or Bounding Boxes
   
-After this, you will have `ILSVRC2012_img.train.tar` and `ILSVRC2012_img.val.tar`
+After this, you will have `ILSVRC2012_img_train.tar` and `ILSVRC2012_img_val.tar`
 
 ### Step2
 
@@ -22,7 +22,7 @@ Extract training dataset
 
 * Extract the train tar to the folder, this will generate lots of .tar files in `xxx/folder`
   ```sh
-  tar -xf ILSVRC2012_img.train.tar -C /path/to/imagenet/train/folder
+  tar -xf ILSVRC2012_img_train.tar -C /path/to/imagenet/train/folder
   ```
 
 * Run following commands to extract .tar in folder
