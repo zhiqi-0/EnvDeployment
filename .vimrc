@@ -10,7 +10,6 @@ set autoindent
 set expandtab
 set softtabstop=2
 set tabstop=2
-set textwidth=80
 set wrap
 set linebreak
 set ruler
@@ -18,6 +17,7 @@ set showmatch
 set hlsearch
 set ignorecase
 set smartcase
+set backspace=2
 
 set mouse=a
 
