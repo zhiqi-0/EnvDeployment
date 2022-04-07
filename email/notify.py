@@ -9,6 +9,7 @@ parser.add_argument('--sender', type=str, help='sender email')
 parser.add_argument('--code', type=str, help='sender password')
 parser.add_argument('--recver', type=str, help='recver email')
 parser.add_argument('--msg', type=str, default='an email notification', help='sending message')
+parser.add_argument('--file', type=str, default=None, help='include txt file content')
 
 args = parser.parse_args()
 
@@ -20,7 +21,12 @@ recver = args.recver
 
 ret = True
 try:
-    msg = MIMEText(args.msg, 'plain', 'utf-8')
+    content = ''
+    if args.file:
+        with open(args.file, 'r', encoding='utf-8') as f:
+            content = f.read()
+
+    msg = MIMEText(args.msg + '\ncontent: ======= \n\n' + content, 'plain', 'utf-8')
     msg['From'] = formataddr(["Notifier", sender])
     msg['To'] = formataddr(["EndUser", recver])
     msg['Subject'] = "Notification"
