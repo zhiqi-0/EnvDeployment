@@ -10,6 +10,7 @@ parser.add_argument('--code', type=str, help='sender password')
 parser.add_argument('--recver', type=str, help='recver email')
 parser.add_argument('--msg', type=str, default='an email notification', help='sending message')
 parser.add_argument('--file', type=str, default=None, help='include txt file content')
+parser.add_argument('--title', type=str, default='Notification', help='email title')
 
 args = parser.parse_args()
 
@@ -29,7 +30,7 @@ try:
     msg = MIMEText(args.msg + '\ncontent: ======= \n\n' + content, 'plain', 'utf-8')
     msg['From'] = formataddr(["Notifier", sender])
     msg['To'] = formataddr(["EndUser", recver])
-    msg['Subject'] = "Notification"
+    msg['Subject'] = args.title
 
     server = smtplib.SMTP_SSL("smtp.qq.com", 465)
     server.login(sender, code)
